@@ -15,8 +15,6 @@
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
 </head>
-
-
 <body>
   <header>
     <h1>Find the Treasure by Veeramreddy Tejeshreddy</h1>
@@ -28,7 +26,6 @@
   <p id="penalty" style="color:black;font-family: 'Times New Roman', Times, serif;">Penalty is zero</p>
   <p style="color: brown;font-family: 'Courier New', Courier, monospace;" onclick="help()" class="btn btn-danger">Click for help</p>
   <p id="help" style="color: brown; font-family: 'Courier New', Courier, monospace;">Help report</p>
-
 
   <div class="container">
     <div class="row mb-3">
@@ -136,13 +133,10 @@
     var treasureLocation = 5;
     var trapLocation = 18;
     var gameOver = false;
-
-
     function check(position) {
       if (gameOver) return;
       var id = ids[position];
       var cha = document.getElementById(id);
-
       if (position === treasureLocation) {
         cha.src = "Treasure.jpg";
         gameOver = true;
@@ -154,18 +148,13 @@
       } else {
         cha.src = "Bones.jpg";
       }
-
       checkCount++;
       penalty++;
-
       document.getElementById("location").textContent = `location ${checkCount}`;
       document.getElementById("penalty").textContent = `penalty is ${penalty}`;
-
       lastCheck = position;
     }
-
     function help() {
-
       var treasureRow = Math.floor(treasureLocation / 5);
       var treasureCol = treasureLocation % 5;
       var lastRow = Math.floor(lastCheck / 5);
@@ -189,9 +178,7 @@
       document.getElementById("penalty").textContent = `penalty is  ${penalty}`;
       document.getElementById("help").textContent = helpText;
       document.getElementById("help").onclick = help;
-
     }
-
   </script>
 </body>
 
