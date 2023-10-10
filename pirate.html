@@ -1,123 +1,198 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-        <title>To Find treasure</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
-          integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
-          integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+  <title>To Find treasure</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
 </head>
 
 
 <body>
-    <header>
-        <h1>Find the Treasure by Veeramreddy Tejeshreddy</h1>
-    </header>
-    <p style="color: brown;font-family: 'Courier New', Courier, monospace;">Click on the locations to search for treasure, beware the traps</p>
-    <p id="location" style="color: brown;font-family: 'Courier New', Courier, monospace;">Number of locations checked is zero</p>
-    <p id="Penalty" style="color:black;font-family: 'Times New Roman', Times, serif;">Penalty is zero</p>
-    <p style="color: brown;font-family: 'Courier New', Courier, monospace;">Click for help</p>
-    <p id="Help" style="color: brown; font-family: 'Courier New', Courier, monospace;">Help report</p>
-    <div class="container">
-      <div class="row mb-3">
-          <div class="col-md-2" >
-              <img src="Location.jpg" alt="Location" width="100" height="100">
-          </div>
-        <div class="col-md-2">
-          <img src="Location.jpg" alt="Location" width="100" height="100">
-        </div>
-        <div class="col-md-2">
-          <img src="Location.jpg" alt="Location" width="100" height="100">
-        </div>
-        <div class="col-md-2">
-          <img src="Location.jpg" alt="Location" width="100" height="100">
-        </div>
-        <div class="col-md-2">
-          <img src="Location.jpg" alt="Location" width="100" height="100">
-        </div>
+  <header>
+    <h1>Find the Treasure by Veeramreddy Tejeshreddy</h1>
+  </header>
+  <p style="color: brown;font-family: 'Courier New', Courier, monospace;">Click on the locations to search for treasure,
+    beware the traps</p>
+  <p id="location" style="color: brown;font-family: 'Courier New', Courier, monospace;">Number of locations checked is
+    zero</p>
+  <p id="penalty" style="color:black;font-family: 'Times New Roman', Times, serif;">Penalty is zero</p>
+  <p style="color: brown;font-family: 'Courier New', Courier, monospace;" onclick="help()" class="btn btn-danger">Click for help</p>
+  <p id="help" style="color: brown; font-family: 'Courier New', Courier, monospace;">Help report</p>
+
+
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change1" onclick="check(0)" width="100" height="100">
       </div>
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change2" onclick="check(1)" width="100" height="100">
+      </div>
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change3" onclick="check(2)" width="100" height="100">
+      </div>
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change4" onclick="check(3)" width="100" height="100">
+      </div>
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change5" onclick="check(4)" width="100" height="100">
+      </div>
+    </div>
   </div>
   <div class="container">
     <div class="row mb-3">
-        <div class="col-md-2" >
-            <img src="Location.jpg" alt="Location" width="100" height="100">
-        </div>
       <div class="col-md-2">
-        <img src="Location.jpg" alt="Location" width="100" height="100">
+        <img src="Location.jpg" alt="Location" id="change6" onclick="check(5)" width="100" height="100">
       </div>
       <div class="col-md-2">
-        <img src="Location.jpg" alt="Location" width="100" height="100">
+        <img src="Location.jpg" alt="Location" id="change7" onclick="check(6)" width="100" height="100">
       </div>
       <div class="col-md-2">
-        <img src="Location.jpg" alt="Location" width="100" height="100">
+        <img src="Location.jpg" alt="Location" id="change8" onclick="check(7)" width="100" height="100">
       </div>
       <div class="col-md-2">
-        <img src="Location.jpg" alt="Location" width="100" height="100">
+        <img src="Location.jpg" alt="Location" id="change9" onclick="check(8)" width="100" height="100">
       </div>
-    </div>
-</div>
-<div class="container">
-  <div class="row mb-3">
-      <div class="col-md-2" >
-          <img src="Location.jpg" alt="Location" width="100" height="100">
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change10" onclick="check(9)" width="100" height="100">
       </div>
-    <div class="col-md-2">
-      <img src="Location.jpg" alt="Location" width="100" height="100">
-    </div>
-    <div class="col-md-2">
-      <img src="Location.jpg" alt="Location" width="100" height="100">
-    </div>
-    <div class="col-md-2">
-      <img src="Location.jpg" alt="Location" width="100" height="100">
-    </div>
-    <div class="col-md-2">
-      <img src="Location.jpg" alt="Location" width="100" height="100">
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="row mb-3">
-      <div class="col-md-2" >
-          <img src="Location.jpg" alt="Location" width="100" height="100">
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change11" onclick="check(10)" width="100" height="100">
       </div>
-    <div class="col-md-2">
-      <img src="Location.jpg" alt="Location" width="100" height="100">
-    </div>
-    <div class="col-md-2">
-      <img src="Location.jpg" alt="Location" width="100" height="100">
-    </div>
-    <div class="col-md-2">
-      <img src="Location.jpg" alt="Location" width="100" height="100">
-    </div>
-    <div class="col-md-2">
-      <img src="Location.jpg" alt="Location" width="100" height="100">
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change12" onclick="check(11)" width="100" height="100">
+      </div>
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change13" onclick="check(12)" width="100" height="100">
+      </div>
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change14" onclick="check(13)" width="100" height="100">
+      </div>
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change15" onclick="check(14)" width="100" height="100">
+      </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="row mb-3">
-      <div class="col-md-2" >
-          <img src="Location.jpg" alt="Location" width="100" height="100">
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change16" onclick="check(15)" width="100" height="100">
       </div>
-    <div class="col-md-2">
-      <img src="Location.jpg" alt="Location" width="100" height="100">
-    </div>
-    <div class="col-md-2">
-      <img src="Location.jpg" alt="Location" width="100" height="100">
-    </div>
-    <div class="col-md-2">
-      <img src="Location.jpg" alt="Location" width="100" height="100">
-    </div>
-    <div class="col-md-2">
-      <img src="Location.jpg" alt="Location" width="100" height="100">
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change17" onclick="check(16)" width="100" height="100">
+      </div>
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change18" onclick="check(17)" width="100" height="100">
+      </div>
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change19" onclick="check(18)" width="100" height="100">
+      </div>
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change20" onclick="check(19)" width="100" height="100">
+      </div>
     </div>
   </div>
-</div>
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change21" onclick="check(20)" width="100" height="100">
+      </div>
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change22" onclick="check(21)" width="100" height="100">
+      </div>
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change23" onclick="check(22)" width="100" height="100">
+      </div>
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change24" onclick="check(23)" width="100" height="100">
+      </div>
+      <div class="col-md-2">
+        <img src="Location.jpg" alt="Location" id="change25" onclick="check(24)" width="100" height="100">
+      </div>
+    </div>
+  </div>
+  <script>
 
+    var ids = ["change1", "change2", "change3", "change4", "changee5", "change6", "change7", "change8", "change9", "change10", "change11", "change12",
+      "change13", "change14", "change15", "change16", "change17", "change18", "change19", "change20", "change21", "change22", "change23", "change24", "change25"];
+
+    var checkCount = 0;
+    var penalty = 0;
+    var lastCheck = 0;
+    var treasureLocation = 5;
+    var trapLocation = 18;
+    var gameOver = false;
+
+
+    function check(position) {
+      if (gameOver) return;
+      var id = ids[position];
+      var cha = document.getElementById(id);
+
+      if (position === treasureLocation) {
+        cha.src = "Treasure.jpg";
+        gameOver = true;
+        penalty -= 3;
+      } else if (position === trapLocation) {
+        cha.src = "trap.jpg";
+        gameOver = true;
+        penalty += 4;
+      } else {
+        cha.src = "Bones.jpg";
+      }
+
+      checkCount++;
+      penalty++;
+
+      document.getElementById("location").textContent = `location ${checkCount}`;
+      document.getElementById("penalty").textContent = `penalty is ${penalty}`;
+
+      lastCheck = position;
+    }
+
+    function help() {
+
+      var treasureRow = Math.floor(treasureLocation / 5);
+      var treasureCol = treasureLocation % 5;
+      var lastRow = Math.floor(lastCheck / 5);
+      var lastCol = lastCheck % 5;
+      if (
+        Math.abs(lastRow - treasureRow) <= 1 &&
+        Math.abs(lastCol - treasureCol) <= 1 &&
+        (Math.abs(lastRow - treasureRow) !== 0 || Math.abs(lastCol - treasureCol) !== 0)
+      ) {
+        var helpText = "Can smell it";
+      }
+      else if (
+        Math.abs(lastRow - treasureRow) + Math.abs(lastCol - treasureCol) == 2
+      ) {
+        var helpText = "Close Matie";
+      }
+      else {
+        var helpText = "Step Faster";
+      }
+      penalty += 2;
+      document.getElementById("penalty").textContent = `penalty is  ${penalty}`;
+      document.getElementById("help").textContent = helpText;
+      document.getElementById("help").onclick = help;
+
+    }
+
+  </script>
 </body>
+
 </html>
