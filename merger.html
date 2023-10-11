@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,9 +50,6 @@
     <button class="btn btn-danger" onclick="remove()">Remove</button>
     <p>Press the button to add an element at the front of the container.</p>
     <button class="btn btn-success" onclick="addFrontItem()">Add front</button>
-
-
-
 </div>
 <script>
     function addEndItem(){
@@ -64,7 +60,6 @@
         fluid=document.getElementById('target');
         fluid.appendChild(create);
     }
-        
         function remove(){
             mergerItems = document.getElementsByClassName("merger");
             length = mergerItems.length;
@@ -73,7 +68,6 @@
                 mergerItems[Math.floor(length/2)].remove();
             }
         }
-
         function addFrontItem() {
             input = document.getElementById('inputText').value;
             create = document.createElement('div');
@@ -83,5 +77,5 @@
             firstChild = fluid.firstChild;
             fluid.insertBefore(create, firstChild);
         }
-
 </script>
+</html>
