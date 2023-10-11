@@ -12,7 +12,7 @@
     <h1>Speed check by Veeramreddy Tejeshreddy</h1>
     <div id="target">Your Timer</div>
     <div id="counter">Count</div>
-    <button class="btn btn-success" id="time">Start Timer</button>
+    <button class="btn btn-success" id="timmer start">Start Timer</button>
     <button class="btn btn-success" id="react" onclick="recordTime()">React</button>
     <script>
         var reactTime=undefined;
@@ -21,6 +21,24 @@
         console.log("reaction time"+reactTime);
         }
         document.getElementById("react").onclick=recordTime;
+        function startTime() {
+            for (let i = 0; i <= 8; i++) {
+                setTimeout(function () {
+                    document.getElementById("counter").innerHTML = "Count: " + i;
+                }, (8 - i) * 1000);
+            }
+        }
+        setTimeout(function () {
+            if (reactTime === undefined) {
+                document.getElementById("target").innerHTML = "Too Slow";
+            } else {
+                var endTime = Date.now();
+                var elapsed = endTime - reactTime;
+                document.getElementById("target").innerHTML = "Time was " + elapsed + " ms";
+            }
+        }, 8000);
+
+        document.getElementById("timmer start").onclick = startTime;
 
     </script>
 </body>
