@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builds a Merger</title>
+    <style>
+        .fluid {
+            display: flex;
+            flex-direction: row;
+            background-color:black;
+        }
+
+        .fluid>div {
+            /*div children of the flex container*/
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 600px) {
+            .fluid {
+                flex-direction: column;
+                background-color: green;
+            }
+        }
+    </style>
+</head>
+<header>
+    <h1>Builds a Merger by Veeramreddy Tejeshreddy</h1>
+</header>
+<div class="fluid" id="target">
+    <div>row item 1</div>
+    <div>row item 2</div>
+    <div>row item 3</div>
+</div><br>
+<div>
+    <input type="text" id="inputText" value="Enter Text Here">
+    <p>Press the button to add an element at the end of the container.</p>
+    <button onclick="addEnd()">Add end</button>
+</div>
+<script>
+    function addEnd(){
+        input = document.getElementById('inputText').value;
+        create=document.createElement('div');
+        create.innerHTML=input;
+        create.className="merger";
+        fluid=document.getElementById('target');
+        fluid.appendChild(create);
+
+    }
+</script>
