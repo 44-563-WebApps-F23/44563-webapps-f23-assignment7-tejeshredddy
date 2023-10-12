@@ -122,15 +122,22 @@
       </div>
     </div>
   </div>
+
+  <button class="btn btn-danger" onclick="newGame()" >NEW GAME</button>
   <script>
-    var ids = ["change1", "change2", "change3", "change4", "changee5", "change6", "change7", "change8", "change9", "change10", "change11", "change12",
-      "change13", "change14", "change15", "change16", "change17", "change18", "change19", "change20", "change21", "change22", "change23", "change24", "change25"];
+    var ids = ["change1", "change2", "change3", "change4", "changee5", 
+     "change6","change7", "change8", "change9", "change10", "change11", 
+     "change12","change13", "change14", "change15", "change16", "change17",
+     "change18", "change19", "change20", "change21", "change22", "change23",
+     "change24", "change25"];
     var checkCount = 0;
     var penalty = 0;
     var lastCheck = 0;
     var treasureLocation = 5;
     var trapLocation = 18;
     var gameOver = false;
+
+
     function check(position) {
       if (gameOver) return;
       var id = ids[position];
@@ -148,8 +155,8 @@
       }
       checkCount++;
       penalty++;
-      document.getElementById("location").textContent = `location ${checkCount}`;
-      document.getElementById("penalty").textContent = `penalty is ${penalty}`;
+      document.getElementById("location").textContent = "location is "+ position ;
+      document.getElementById("penalty").textContent = "penalty is " +penalty;
       lastCheck = position;
     }
     
@@ -177,6 +184,22 @@
       document.getElementById("penalty").textContent = `penalty is  ${penalty}`;
       document.getElementById("help").textContent = helpText;
       document.getElementById("help").onclick = help;
+    }
+    function newGame() {
+        
+        treasureLocation = Math.floor(Math.random() * 25);
+        trapLocation = Math.floor(Math.random() * 25);
+    
+        
+        var imageElements = document.getElementsByTagName("img");
+        for (let i = 0; i < imageElements.length; i++) {
+            imageElements[i].src = "Location.jpg";
+        }
+        gameOver = false;
+
+       document.getElementById("locations").innerHTML = "Number of locations checked is : " + checkCount;
+        document.getElementById("penalty").innerHTML = "Penalty is : " + penalty;
+    
     }
   </script>
 </body>
