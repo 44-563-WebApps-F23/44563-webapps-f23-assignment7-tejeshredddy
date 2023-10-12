@@ -186,20 +186,15 @@
       document.getElementById("help").onclick = help;
     }
     function newGame() {
-        
         treasureLocation = Math.floor(Math.random() * 25);
         trapLocation = Math.floor(Math.random() * 25);
-    
-        
         var imageElements = document.getElementsByTagName("img");
         for (let i = 0; i < imageElements.length; i++) {
             imageElements[i].src = "Location.jpg";
         }
         gameOver = false;
-
-       document.getElementById("locations").innerHTML = "Number of locations checked is : " + checkCount;
+       document.getElementById("location").innerHTML = "Number of locations checked is : " + checkCount;
         document.getElementById("penalty").innerHTML = "Penalty is : " + penalty;
-    
     }
   </script>
 </body>
